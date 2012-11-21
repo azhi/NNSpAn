@@ -1,0 +1,9 @@
+" vim files
+*.swp
+*.swo
+
+" object files
+*.o
+
+" executable
+NN
