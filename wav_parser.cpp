@@ -77,7 +77,7 @@ void WAV_parser::init(char* path)
   buf_capacity = 0;
 }
 
-void WAV_parser::fill_next_fft_chunk(size_t samples, fftw_complex* ar)
+void WAV_parser::fill_next_fft_chunk(size_t samples, double* ar)
 {
   if ( buf_capacity < wd.sampleSize * samples )
     buf = (byte*) realloc(buf, wd.sampleSize * samples);
@@ -95,8 +95,8 @@ void WAV_parser::fill_next_fft_chunk(size_t samples, fftw_complex* ar)
     sample_int = (hi << 8) | lo;
     if ( neg )
       sample_int *= -1;
-    ar[i][0] = sample_int;
+    ar[i] = sample_int;
   }
   for ( long i = readed_samples; i < samples; ++i )
-    ar[i][0] = 0;
+    ar[i] = 0;
 }

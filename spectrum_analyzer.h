@@ -6,7 +6,7 @@
 #include <fftw3.h>
 #include "wav_parser.h"
 
-#define FFT_CHUNK_SIZE 512
+#define FFT_CHUNK_SIZE 1024
 
 struct Spectrum
 {

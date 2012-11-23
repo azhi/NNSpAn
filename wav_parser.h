@@ -29,7 +29,7 @@ public:
   virtual ~WAV_parser();
 
   void init(char* path);
-  void fill_next_fft_chunk(size_t samples, fftw_complex* ar);
+  void fill_next_fft_chunk(size_t samples, double* ar);
 
   inline WAV_descriptor get_wav_descriptor() { return wd; };
 
